@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación a Nuestra Boda | Ana & Luis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Variables CSS para colores elegantes */
+        :root {
+            --primary-gold: #d4af37;
+            --deep-gold: #b8941f;
+            --cream: #faf8f3;
+            --soft-ivory: #f7f4ed;
+            --charcoal: #2c2c2c;
+            --warm-gray: #6b6b6b;
+            --light-gold: #f4e8c1;
+            --shadow: rgba(44, 44, 44, 0.15);
+        }
+
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--charcoal);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Ornamentos decorativos */
+        .ornament {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .ornament::before,
+        .ornament::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+        }
+
+        .ornament::before {
+            left: -4px;
+        }
+
+        .ornament::after {
+            right: -4px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(44, 44, 44, 0.7), rgba(212, 175, 55, 0.3)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect fill="%23f7f4ed" width="1000" height="600"/><g fill="%23d4af37" opacity="0.1"><circle cx="200" cy="150" r="80"/><circle cx="800" cy="450" r="120"/><circle cx="500" cy="300" r="60"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 30%, rgba(44, 44, 44, 0.4));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            padding: 40px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
+            margin: 0 0 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.1em;
+
+        }
+
+        .hero-content > p {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin: 20px 0 40px;
+            opacity: 0.95;
+        }
+
+        .countdown {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: var(--primary-gold);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.9;
+        }
+
+        /* Secciones */
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-child(even) {
+            background: var(--soft-ivory);
+        }
+
+        section h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--charcoal);
+        }
+
+        /* Detalles */
+        .details {
+            text-align: center;
+        }
+
+        .detail-box {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px var(--shadow);
+            max-width: 600px;
+            margin: 40px auto 0;
+            border: 1px solid var(--light-gold);
+            position: relative;
+        }
+
+        .detail-box::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            background: linear-gradient(45deg, var(--primary-gold), var(--deep-gold), var(--primary-gold));
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .detail-item {
+            margin: 25px 0;
+            font-size: 1.3rem;
+            color: var(--charcoal);
+        }
+
+        .detail-item strong {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-gold);
+            font-size: 1.1em;
+            display: inline-block;
+            min-width: 80px;
+        }
+
+        /* Galería */
+        .gallery {
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(44, 44, 44, 0.25);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid var(--light-gold); /* Borde dorado claro */
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+            filter: sepia(15%) brightness(95%) contrast(110%); /* Tono vintage */
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.3); /* Sombra dorada */
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            filter: sepia(5%) brightness(100%) contrast(100%); /* Efecto al hover */
+        }
+
+        .gallery-placeholder {
+            background: linear-gradient(135deg, var(--light-gold), var(--primary-gold));
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* RSVP */
+        .rsvp {
+            text-align: center;
+        }
+
+        #rsvp-form {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px var(--shadow);
+            max-width: 500px;
+            margin: 40px auto 0;
+            border: 1px solid var(--light-gold);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            color: var(--charcoal);
+            font-size: 1.1rem;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid var(--light-gold);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Cormorant Garamond', serif;
+            background: var(--cream);
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+            background: white;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--primary-gold), var(--deep-gold));
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, var(--deep-gold), var(--primary-gold));
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--charcoal), #3a3a3a);
+            color: white;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+        }
+
+        footer p {
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        /* Efectos de entrada */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 20px;
+            }
+
+            .countdown-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .countdown-number {
+                font-size: 2rem;
+            }
+
+            .detail-box,
+            #rsvp-form {
+                margin: 20px;
+                padding: 30px 25px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .countdown-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .detail-box,
+            #rsvp-form {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content fade-in">
+            <h1>Alfredo & Maylin</h1>
+            <div class="ornament"></div>
+            <p>Nos Casamos</p>
+            <div class="countdown" id="countdown">
+                <div style="font-size: 1.1rem; margin-bottom: 15px; letter-spacing: 0.2em;">FALTAN</div>
+                <div class="countdown-grid">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">0</span>
+                        <span class="countdown-label">Días</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">0</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">0</span>
+                        <span class="countdown-label">Minutos</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">0</span>
+                        <span class="countdown-label">Segundos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="details">
+        <div class="container">
+            <h2 class="fade-in">Celebra con Nosotros</h2>
+            <div class="ornament"></div>
+            <div class="detail-box fade-in">
+                <div class="detail-item">
+                    <strong>Fecha:</strong> 25 de Junio, 2025
+                </div>
+                <div class="detail-item">
+                    <strong>Lugar:</strong> Colonia emiliano zapata
+                </div>
+                <div class="detail-item">
+                    <strong>Hora:</strong> 12:00 PM
+                </div>
+                <div style="margin-top: 30px;">
+                    <a href="https://maps.app.goo.gl/NRJjmJiWH6aHCCyN7" target="_blank" class="btn">Ver Ubicación</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="gallery" style="background: var(--soft-ivory);">
+    <div class="container">
+        <!-- Título principal -->
+        <h2 class="fade-in" style="font-family: 'Playfair Display'; margin-bottom: 5px;">Nuestro Momento</h2>
+        
+        <!-- Línea decorativa -->
+        <div class="ornament" style="margin: 10px auto 25px;"></div>
+        
+        <!-- Texto descriptivo (cursiva elegante) -->
+        <div class="fade-in" style="
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            font-family: 'Cormorant Garamond';
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--warm-gray);
+        ">
+            <p style="font-style: italic; position: relative;">
+                <span style="
+                    font-size: 2.5rem;
+                    color: var(--primary-gold);
+                    position: absolute;
+                    left: -30px;
+                    top: -15px;
+                ">“</span>
+                Estos fragmentos de nuestra historia son el preludio del capítulo más importante: 
+                <span style="color: var(--charcoal); font-weight: 500;">el día que uniremos nuestras vidas</span>. 
+                Queremos que formes parte de este momento.
+                <span style="
+                    font-size: 2.5rem;
+                    color: var(--primary-gold);
+                    position: absolute;
+                    right: -30px;
+                    bottom: -25px;
+                ">”</span>
+            </p>
+            
+            <!-- Frase de cierre -->
+            <p style="
+                margin-top: 30px;
+                font-family: 'Montserrat';
+                letter-spacing: 0.1em;
+                color: var(--primary-gold);
+                font-size: 1.1rem;
+            ">
+                ¡TE ESPERAMOS CON ILUSIÓN!
+            </p>
+        </div>
+    </div>
+</section>
+
+    <section class="rsvp">
+        <div class="container">
+            <h2 class="fade-in">Confirma tu Asistencia</h2>
+            <div class="ornament"></div>
+            <form id="rsvp-form" class="fade-in" action="https://formspree.io/f/xanjnbgz" method="POST">
+                <div class="form-group">
+                    <label for="name">Nombre Completo</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="invitado-de">¿Eres invitado de?</label>
+                    <select id="invitado-de" name="invitado-de" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="Novia">La Novia (Maylin)</option>
+                        <option value="Novio">El Novio (Alfredo)</option>
+                        <option value="Ambos">Ambos</option>
+                        <option value="Familia">Familia</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="attendance">Confirmación de Asistencia</label>
+                    <select id="attendance" name="attendance" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="yes">¡Sí, asistiré con mucho gusto!</option>
+                        <option value="no">Lo siento, no podré asistir</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje (opcional)</label>
+                    <textarea id="message" name="message" rows="3" style="resize: vertical; font-family: 'Cormorant Garamond', serif; padding: 15px 20px; border: 2px solid var(--light-gold); border-radius: 10px; width: 100%; background: var(--cream);"></textarea>
+                </div>
+                <input type="hidden" name="_subject" value="Nueva confirmación - [invitado-de] - Alfredo & Maylin">
+                <input type="hidden" name="_next" value="index.html">
+                <button type="submit" class="btn">Confirmar Asistencia</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>Con todo nuestro amor, Alfredo & Maylin ♥</p>
+    </footer>
+
+    <script>
+        // Countdown para la fecha de la boda
+        function updateCountdown() {
+            const weddingDate = new Date("June 25, 2025 12:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("countdown").innerHTML = `
+                    <div style="font-size: 2rem; color: var(--primary-gold); font-family: 'Playfair Display', serif;">
+                        ¡Hoy es nuestro gran día!
+                    </div>
+                `;
+            }
+        }
+
+        updateCountdown();
+        const countdown = setInterval(updateCountdown, 1000);
+
+        // Formulario RSVP con manejo de respuesta
+        document.getElementById("rsvp-form").addEventListener("submit", function(e) {
+            e.preventDefault(); // Prevenir el envío automático
+            
+            const form = this;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            const formData = new FormData(form);
+            
+            // Actualizar el subject con la información del invitado
+            const invitadoDe = formData.get('invitado-de');
+            const subjectInput = form.querySelector('input[name="_subject"]');
+            subjectInput.value = `Nueva confirmación - ${invitadoDe} - Alfredo & Maylin`;
+            
+            // Mostrar estado de envío
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+            
+            // Enviar usando fetch para controlar la respuesta
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Error en el envío');
+            })
+            .then(data => {
+                // Éxito - mostrar mensaje personalizado
+                const name = formData.get('name');
+                const attendance = formData.get('attendance');
+                
+                let message = `¡Gracias ${name}!`;
+                message += ` (Invitado de: ${invitadoDe})`;
+
+                if (attendance === "yes") {
+                    message += " Nos emociona saber que estarás con nosotros en nuestro gran día. ♥";
+                } else {
+                    message += " Entendemos y te agradecemos por hacérnoslo saber. ♥";
+                }
+                
+                // Crear modal de éxito elegante
+                showSuccessModal(message);
+                form.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Hubo un problema al enviar tu confirmación. Por favor, intenta de nuevo.');
+            })
+            .finally(() => {
+                // Restaurar botón
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+        
+        // Función para mostrar modal de éxito
+        function showSuccessModal(message) {
+            // Crear modal
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(44, 44, 44, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+                animation: fadeIn 0.3s ease;
+            `;
+            
+            const modalContent = document.createElement('div');
+            modalContent.style.cssText = `
+                background: white;
+                padding: 40px;
+                border-radius: 20px;
+                max-width: 500px;
+                text-align: center;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                border: 2px solid var(--primary-gold);
+                animation: slideIn 0.3s ease;
+            `;
+            
+            modalContent.innerHTML = `
+                <div style="color: var(--primary-gold); font-size: 3rem; margin-bottom: 20px;">✓</div>
+                <h3 style="font-family: 'Playfair Display', serif; color: var(--charcoal); margin-bottom: 20px;">Confirmación Enviada</h3>
+                <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--warm-gray); margin-bottom: 30px;">${message}</p>
+                <button onclick="this.closest('div').parentNode.remove()" style="background: var(--primary-gold); color: white; border: none; padding: 12px 30px; border-radius: 25px; font-family: 'Montserrat', sans-serif; cursor: pointer; font-size: 1rem;">Cerrar</button>
+            `;
+            
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+            
+            // Cerrar al hacer clic en el fondo
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+        }
+
+
+        // Animaciones de entrada
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos con animación
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Efecto parallax suave en el hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
+
